@@ -1,0 +1,33 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Today</h1>
+      <ul class="nav nav-tabs nav-stacked" ng-repeat="thing in awesomeThings | orderBy: '-upvotes'">
+        <li>
+          <button ng-click="incrementUpvotes(thing)"><div class="glyphicon glyphicon-thumbs-up"></div></button>{{thing.upvotes}}
+          <a href="{{thing.url}}" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="thing-form">
+    <label></label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Title" ng-model="newThingName">
+      <input type="text" class="form-control" placeholder="Url" ng-model="newThingUrl">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addThing()">Submit</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>CodeMagnet |
+        <a href="https://twitter.com/tyhenkel">@timadayon</a> |
+         <a href="https://github.com/timakin/codemagnet_app/issues">Github Issues</a></p>
+  </div>
+</footer>
