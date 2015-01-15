@@ -10,13 +10,13 @@ angular.module('codemagnetAppApp')
     });
 
     $scope.addThing = function() {
-      if($scope.newThingName === '' || $scope.newThingUrl === '') {
+      if (!$scope.newThingName || !$scope.newThingUrl) {
         return;
+      } else {
+        $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, created_at: Date.now() });
+        $scope.newThingName = '';
+        $scope.newThingUrl = '';
       }
-      $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, created_at: Date.now() });
-
-      $scope.newThingName = '';
-      $scope.newThingUrl = '';
     };
 
     $scope.deleteThing = function(thing) {

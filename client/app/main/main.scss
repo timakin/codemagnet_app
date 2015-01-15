@@ -5,6 +5,21 @@
 .navbar-default {
     background: none;
     opacity: 1.0;
+    border-color: rgba(0,0,0,0);    
+
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-brand:focus {
+    color: white;
+}
+.navbar-default .navbar-brand:hover {
+    color: white;
+}
+
+.upvoteButton {
+    display: block;
 }
 
 #banner {

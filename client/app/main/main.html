@@ -1,27 +1,65 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<header class="hero-unit" id="banner">
+  <div ng-include="'components/navbar/navbar.html'"></div>
+  <div class="container">
+    <h1>CodeMagnet</h1>
+    <p class="lead">Read code, like as a magazine.</p>
+    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
+      POST CODE
+    </button>
+
+  </div>
+</header>
+
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Today</h1>
-      <ul class="nav nav-tabs nav-stacked" ng-repeat="thing in awesomeThings | orderBy: '-upvotes'">
-        <li>
-          <button ng-click="incrementUpvotes(thing)"><div class="glyphicon glyphicon-thumbs-up"></div></button>{{thing.upvotes}}
-          <a href="{{thing.url}}" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
-  </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
 
-  <form class="thing-form">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">    
+    <form class="thing-form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Post Code</h4>
+      </div>
+      <div class="modal-body">
+
     <label></label>
     <p class="input-group">
       <input type="text" class="form-control" placeholder="Title" ng-model="newThingName">
       <input type="text" class="form-control" placeholder="Url" ng-model="newThingUrl">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Submit</button>
-      </span>
     </p>
+      </div>
+      <div class="modal-footer">
+      <span class="input-group-btn">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addThing()">Submit</button>
+      </span>
+      </div>
+    </div>
   </form>
+  </div>
+</div>
+      <h3 class="page-header">Today</h3>
+      <ul class="" ng-repeat="thing in awesomeThings | orderBy: '-upvotes'">
+        <li>
+          <button class="btn" ng-click="incrementUpvotes(thing)">
+            <div class="glyphicon glyphicon-thumbs-up upvoteButton"></div>{{thing.upvotes}}
+          </button>
+          <a tooltip="{{thing.info}}">{{thing.name}}<a href="{{thing.url}}">link</a><button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+
 </div>
 
 <footer class="footer">
