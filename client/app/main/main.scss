@@ -18,8 +18,30 @@
     color: white;
 }
 
+.btnPostCode {
+    color: white;
+    border: 1px solid white;
+    border-radius: 0px;
+    background-color: rgba(0,0,0,0);
+    padding: 15px 30px;
+}
+
+.btnPostCode:hover {
+    color: white;
+    background-color: blue;
+}
+
+.modal-title {
+    color: black;
+}
 .upvoteButton {
     display: block;
+}
+
+.codeList {
+    list-style: none;
+    padding: none;
+    -webkit-padding-start: 0px;
 }
 
 #banner {
