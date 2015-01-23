@@ -15,9 +15,10 @@ angular.module('codemagnetAppApp')
       if (!$scope.newThingName || !$scope.newThingUrl) {
         return;
       } else {
-        $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, created_at: Date.now() });
+        $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, info: $scope.newThingInfo, created_at: Date.now() });
         $scope.newThingName = '';
         $scope.newThingUrl = '';
+        $scope.newThingInfo = '';
       }
     };
 

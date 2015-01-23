@@ -3,7 +3,17 @@
 angular.module('codemagnetAppApp')
   .filter('dailyLoop', function () {
     return function (thing, day) {
-      console.log(thing);
-      console.log(day);
+      function toDateFormat(date) {
+        return date.toDateString();
+      };
+
+      if (typeof thing !== 'undefined' && typeof day !== 'undefined') {
+        var rawCreated = new Date(thing.created_at);
+        var created = toDateFormat(rawCreated);
+        var date = toDateFormat(day);
+        if (created === date) {
+          return true; 
+        };
+      }
     };
   });

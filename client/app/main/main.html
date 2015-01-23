@@ -3,8 +3,8 @@
 <header class="hero-unit" id="banner">
   <div ng-include="'components/navbar/navbar.html'"></div>
   <div class="container heroContent">
-    <h1>Read code, like as a magazine.</h1>
-    <p class="lead">Modern scheme for Hackers' topic sharing.</p>
+    <h1 class="letterSpacing2px">Read code, like as a magazine.</h1>
+    <p class="lead letterSpacing2px">Modern scheme for Hackers' topic sharing.</p>
     <button type="button" class="btn btn-lg btnPostCode" data-toggle="modal" data-target="#myModal">
       POST CODE
     </button>
@@ -28,13 +28,14 @@
     <p class="input-group codePostForm">
       <input type="text" class="form-control codePostFormInput" placeholder="Title" ng-model="newThingName">
       <input type="text" class="form-control codePostFormInput" placeholder="Url" ng-model="newThingUrl">
+      <input type="text" class="form-control codePostFormInput" placeholder="introduction" ng-model="newThingInfo">
     </p>
       </div>
       <div class="modal-footer">
-      <span class="input-group-btn">    
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addThing()">Submit</button>
-      </span>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addThing()">Submit</button>
+        </span>
       </div>
     </div>
   </form>
@@ -42,50 +43,21 @@
 </div>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-1"></div>
-
-
-
-    <div class="col-md-10">
-      <h3 class="page-header colorBrown">Today</h3>
-      <ul class="codeList" ng-repeat="thing in awesomeThings | orderBy: '-upvotes'">
-        <li class="codeListContent">
-          <button class="btn btnUpvote" ng-click="incrementUpvotes(thing)">
-            <a class="upvoteButton"></a>
-            <a class="counter">{{thing.upvotes}}</a>
-          </button>
-          <button type="button" class="close" ng-click="deleteThing(thing)">&times;</button>
-          <div class="codeListDescription">
-            <a class="codeTitle" tooltip="{{thing.info}}" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
-            <a class="codeInfo">{{thing.created_at}}</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-
-
-    <div class="col-md-1"></div>
-  </div>
-</div>
-
 <div class="container" ng-repeat="day in days">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
       <h3 class="page-header colorBrown">{{day | date: 'yyyy-MM-dd'}}</h3>
       <ul class="codeList" ng-repeat="thing in awesomeThings | orderBy: '-upvotes'">
-        <li class="codeListContent">
+        <li class="codeListContent" ng-if="thing | dailyLoop:day">
           <button class="btn btnUpvote" ng-click="incrementUpvotes(thing)">
             <a class="upvoteButton"></a>
             <a class="counter">{{thing.upvotes}}</a>
           </button>
-          <button type="button" class="close" ng-click="deleteThing(thing)">&times;</button>
+          <!--<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button>-->
           <div class="codeListDescription">
-            <a class="codeTitle" tooltip="{{thing.info}}" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
-            <a class="codeInfo">{{thing.created_at | date: 'dd/MM/yyyy' }}</a>
+            <a class="codeTitle" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
+            <p class="codeInfo">{{thing.info}}</p>
           </div>
         </li>
       </ul>
