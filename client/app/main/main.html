@@ -4,7 +4,7 @@
   <div ng-include="'components/navbar/navbar.html'"></div>
   <div class="container heroContent">
     <h1 class="letterSpacing2px">Read code, like as a magazine.</h1>
-    <p class="lead letterSpacing2px">Modern scheme for Hackers' topic sharing.</p>
+    <p class="lead">Modern scheme for Hackers' topic sharing.</p>
     <button type="button" class="btn btn-lg btnPostCode" data-toggle="modal" data-target="#myModal">
       POST CODE
     </button>
@@ -28,7 +28,7 @@
     <p class="input-group codePostForm">
       <input type="text" class="form-control codePostFormInput" placeholder="Title" ng-model="newThingName">
       <input type="text" class="form-control codePostFormInput" placeholder="Url" ng-model="newThingUrl">
-      <input type="text" class="form-control codePostFormInput" placeholder="introduction" ng-model="newThingInfo">
+      <textarea class="codePostFromInput form-control codePostFormInput" placeholder="Introduction of code" ng-model="newThingInfo"></textarea>
     </p>
       </div>
       <div class="modal-footer">

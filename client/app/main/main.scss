@@ -1,5 +1,4 @@
 .letterSpacing2px { letter-spacing: 2px; }
-
 #banner h1.letterSpacing2px { letter-spacing: 2px; }
 
 
@@ -34,8 +33,7 @@
 
 .btnPostCode:hover {
     color: white;
-    background-color: rgba(32,151,211, 0.4);
-    border: 1px solid rgba(32,151,211, 0.4);
+    background-color: rgba(32,151,211, 0.7);
 }
 
 .codePostForm {
@@ -51,14 +49,14 @@
 .upvoteButton {
     display: block;
     position: relative;
-bottom: 5px;
-display: inline-block;
-width: 0px;
-height: 0px;
-border-bottom: 12px solid #534540;
-border-left: 8px solid transparent;
-border-right: 8px solid transparent;
-border-top: 12px solid transparent;
+    bottom: 5px;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-bottom: 12px solid #534540;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid transparent;
 }
 
 .codeList {
@@ -90,12 +88,12 @@ border-top: 12px solid transparent;
 }
 
 .heroTop {
-  background-image: url(../assets/images/gradientvalley.jpeg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  z-index: -100;
+    background-image: url(../assets/images/gradientvalley.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -100;
 }
 
 .heroContent {
@@ -117,7 +115,8 @@ border-top: 12px solid transparent;
 .codeListDescription {
     display: inline-table;
     padding: 0 0 0 10px;
-    vertical-align: middle;
+    vertical-align: top;
+    width: 90%;
 }
 
 .codeTitle {
@@ -126,6 +125,9 @@ border-top: 12px solid transparent;
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
+
+    width:100%;
+    word-break: break-all;
 }
 .codeTitle:hover {
     color: #534540;
@@ -137,6 +139,8 @@ border-top: 12px solid transparent;
     margin: 5px 0 0 0px;
     display: block;
     line-height: 20px;
+    width:100%;
+    word-break: break-all;
 }
 
 .btnUpvote {
@@ -158,12 +162,12 @@ border-top: 12px solid transparent;
     margin-top: 7px;
 }
 .counter {
-font-size: 12px;
-display: block;
-position: relative;
-bottom: 4px;
-color: #534540;
-font-weight: 600;
+    font-size: 12px;
+    display: block;
+    position: relative;
+    bottom: 4px;
+    color: #534540;
+    font-weight: 600;
 }
 
 .counter:hover {
@@ -176,4 +180,17 @@ font-weight: 600;
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+}
+
+textarea.codePostFormInput {
+    resize:none;
+    max-width: 100%;
+    height:200px; 
+    min-height:200px;  
+    max-height:200px;
+}
+
+textarea.codePostFormInput::-webkit-input-placeholder::after {
+  display: block;
+  content: "\A*Please enter the reason why your code is cool, practical.\A Raw code is hard to understand the logic, and the role in whole code.\A So, write down the explanation of code.\A It'll let others to improve coding skill.";
 }
