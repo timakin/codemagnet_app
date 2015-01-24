@@ -12,7 +12,7 @@ angular.module('codemagnetAppApp')
     });
 
     $scope.addThing = function() {
-      if (!$scope.newThingName || !$scope.newThingUrl || !$sope.newThingInfo) {
+      if (!$scope.newThingName || !$scope.newThingUrl || !$scope.newThingInfo) {
         return;
       } else {
         $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, info: $scope.newThingInfo, created_at: Date.now() });
