@@ -15,7 +15,7 @@ angular.module('codemagnetAppApp')
       if (!$scope.newThingName || !$scope.newThingUrl || !$scope.newThingInfo) {
         return;
       } else {
-        $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, info: $scope.newThingInfo, created_at: Date.now() });
+        $http.post('/api/things', { name: $scope.newThingName, url: $scope.newThingUrl, info: $scope.newThingInfo, createdAt: Date.now() });
         $scope.newThingName = '';
         $scope.newThingUrl = '';
         $scope.newThingInfo = '';
@@ -41,17 +41,11 @@ angular.module('codemagnetAppApp')
       var tMonth = today.getMonth();
       var tDate = today.getDate();
 
-      // 5DaysAgo
-      var fiveDaysAgo = new Date(tYear, tMonth, tDate - 5);
-      var fYear = fiveDaysAgo.getFullYear();
-      var fMonth = fiveDaysAgo.getMonth();
-      var fDate = fiveDaysAgo.getDate();
-
-      var days = []
-      for (var i = 0; i < 5; i++) {
+      var days = [];
+      for (var i = 0; i < 3; i++) {
         var oneDay = new Date(tYear, tMonth, tDate - i);
         days.push(oneDay);
-      };
+      }
       return days;
     };
   });

@@ -9,7 +9,7 @@ var ThingSchema = new Schema({
   info: String,
   active: Boolean,
   upvotes: {type: Number, default: 0},
-  created_at: Date
+  createdAt: Date
 });
 
 ThingSchema.methods.upvote = function(ts) {
