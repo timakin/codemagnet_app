@@ -8,7 +8,6 @@
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 
-Thing.find({}).remove(function() {
   Thing.create({
     name: 'High speed search with ag',
     url: 'https://github.com/ggreer/the_silver_searcher/blob/5e491d7211b0f77d03befd842ca5d6bd44ad244c/src/util.c#L140',
@@ -40,9 +39,7 @@ Thing.find({}).remove(function() {
   }, function() {
     console.log('finished populating things');
   });
-});
 
-User.find({}).remove(function() {
   User.create({
     provider: 'local',
     name: 'Test User',
@@ -58,4 +55,3 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
-});

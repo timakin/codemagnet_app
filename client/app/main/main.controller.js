@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('codemagnetAppApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth, User) {
     $scope.awesomeThings = [];
     $scope.days = [];
+    $scope.isAdmin = Auth.isAdmin;
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;

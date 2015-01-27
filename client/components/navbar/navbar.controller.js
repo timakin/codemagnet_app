@@ -13,7 +13,7 @@ angular.module('codemagnetAppApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/gogoadmin');
     };
 
     $scope.isActive = function(route) {

@@ -4,7 +4,7 @@ angular.module('codemagnetAppApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('login', {
-        url: '/login',
+        url: '/gogoadmin',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginCtrl'
       })
