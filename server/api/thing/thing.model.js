@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 var ThingSchema = new Schema({
   name: String,
   url: String,
+  language: String,
   info: String,
   active: Boolean,
   upvotes: {type: Number, default: 0},

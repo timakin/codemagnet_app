@@ -143,6 +143,11 @@
     word-break: break-all;
 }
 
+.codeLang {
+    color: #3B67B6;
+    display: block;
+}
+
 .btnUpvote {
     background-color: #3B67B6;
     box-shadow: 0px 1px 0px 0px rgba(83,69,64,0.3),0px 1px 1px 0px rgba(0,0,0,0.2);
@@ -193,4 +198,8 @@ textarea.codePostFormInput {
 textarea.codePostFormInput::-webkit-input-placeholder::after {
   display: block;
   content: "\A*Please enter the reason why your code is cool, practical.\A Raw code is hard to understand the logic, and the role in whole code.\A So, write down the explanation of code.\A It'll let others to improve coding skill.";
+}
+
+.selectLang {
+    margin-top: 8px;
 }
