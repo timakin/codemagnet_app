@@ -62,6 +62,8 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/about/about.controller.js"></script>
+          <script src="app/about/about.js"></script>
           <script src="app/account/account.js"></script>
           <script src="app/account/login/login.controller.js"></script>
           <script src="app/account/settings/settings.controller.js"></script>
@@ -76,9 +78,14 @@
           <script src="components/code-post-modal/code-post-modal.service.js"></script>
           <script src="components/modal/modal.service.js"></script>
           <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+          <script src="components/navbar-notransparent/navbar-notransparent.controller.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <script src="components/socket/socket.service.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
+
+        <!-- Other components -->
+        <script src="bower_components/bootstrap/js/modal.js"></script>
+        <!-- end other components -->
 </body>
 </html>
