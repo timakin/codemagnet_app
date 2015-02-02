@@ -2,3 +2,13 @@
   letter-spacing: 1px;
   font-size: 20px;
 }
+.navbar-nav{
+  li{
+    a.txtWhite{
+      color: white;
+      &:hover:{
+        color: white; 
+      }
+    }
+  }
+}
