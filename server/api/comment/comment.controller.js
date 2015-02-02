@@ -22,10 +22,11 @@ exports.index = function(req, res) {
 
 // Get a single thing
 exports.show = function(req, res) {
-  Comment.findById(req.params.id, function (err, thing) {
+  console.log("params-",req.params.id);
+  Comment.find({'thingId':req.params.id}, function (err, comments) {
     if(err) { return handleError(res, err); }
-    if(!thing) { return res.send(404); }
-    return res.json(thing);
+    if(!comments) { return res.send(404); }
+    return res.json(comments);
   });
 };
 
