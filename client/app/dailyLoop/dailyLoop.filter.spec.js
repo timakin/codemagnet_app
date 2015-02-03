@@ -13,8 +13,7 @@ describe('Filter: dailyLoop', function () {
 
   it('should return the input prefixed with "dailyLoop filter:"', function () {
     var text = 'angularjs';
-    var d = new Date(); // 2nd arg needed
-    expect(dailyLoop(text, d)).toBe('dailyLoop filter: ' + text);
+    expect(dailyLoop(text)).toBe('dailyLoop filter: ' + text);
   });
 
 });
