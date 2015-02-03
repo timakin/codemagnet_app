@@ -60,7 +60,7 @@
           <div class="codeListDescription">
             <a class="codeTitle" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
             <p class="codeLang">{{thing.language}}</p>
-            <p class="codeInfo">{{thing.info}}</p>
+            <p class="codeInfo" ng-init="thing.isComment=false" ng-click="thing.isComment=!thing.isComment">{{thing.info}}</p>
           </div>
 
           <react-component name="Comment" props="thing" />

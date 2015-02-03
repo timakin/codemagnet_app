@@ -12,10 +12,10 @@ var Comment = React.createClass({
       this.setState({description: event.target.value});
     },
 
-    setComment: function(data, status){
+    setComment: function(commentsData, status){
       if(status === "success"){
         this.setState({
-          comments: data
+          comments: commentsData
         });
       }
     },
@@ -27,35 +27,45 @@ var Comment = React.createClass({
       });
     },
 
+    componentWillMount: function(){
+    },
+
     componentDidMount: function(){
-      this.commentsRefresh();
+        this.commentsRefresh();
     },
 
     sending: function(){
-      $.post('/api/comments/', {
-          thingId: this.props._id,
-          description: this.state.description
-        }, this.commentsRefresh);
+      if(this.state.description.length > 0){
+        $.post('/api/comments/', {
+            thingId: this.props._id,
+            description: this.state.description
+          }, this.commentsRefresh);
+      }
     },
 
     render: function() {
 
         if(this.state.comments){
           var commentListView = this.state.comments.map(function(comment){
-            return (<div className="description">
-                      {comment.description}
-                    </div>);
+            return (
+              <li className="description">
+                {comment.description}
+              </li>);
           }.bind(this));
         }
 
+        var commentStyles = "comment " + (!!this.props.isComment===true?'active':'inactive');
+
         return (
-            <div className="comment">
-              <div className="commentList">
-                {commentListView}
-              </div>
-              <textarea type="text"  value={this.state.description} onChange={this.handleChange}></textarea>
-              <div class="button" onClick={this.sending}>送信</div>
-            </div>
+          <div className={commentStyles}>
+            <hr />
+            <p>Comment</p>
+            <ul className="commentList">
+              {commentListView}
+            </ul>
+            <textarea placeholder="Please enter a comment..." className="form-control" rows="3" type="text" value={this.state.description} onChange={this.handleChange}></textarea>
+            <div className="btn btn-send" onClick={this.sending}>Send</div>
+          </div>
         );
     }
 });

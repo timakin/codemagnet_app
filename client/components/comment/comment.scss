@@ -1,0 +1,35 @@
+.comment{
+  margin-top: 12px;
+  overflow: hidden;
+  padding-left: 42px;
+  color: #999;
+
+  &.active{
+    display: block;
+  }
+  &.inactive{
+    display: none;
+  }
+
+  textarea{
+    margin-top: 8px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .btn-send{
+    float:right;
+    margin: 8px;
+    padding: 4px 6px;
+    background-color: #3B67B6;
+    box-shadow: 0px 1px 0px 0px rgba(83, 69, 64, 0.3), 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    // width: 30px;
+    // height: 45px;
+    text-align: center;
+    cursor: pointer;
+    // padding: 0 1px;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+  }
+}
