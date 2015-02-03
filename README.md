@@ -7,9 +7,14 @@
 
 
 ## How to develop
-- `npm i`
-- `bower install`
+### instalation
+- `npm i && bower install`
+
+### daemon preparation
+- `mongod --dbpath /path/to/your/datadir &` # depends on your environment, anyway, you need mongo.
+- `grunt serve`
+
+### build & test
 - `grunt`
 
 🍣
-

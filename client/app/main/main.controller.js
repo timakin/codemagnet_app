@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('codemagnetAppApp')
-  .controller('MainCtrl', function ($scope, $http, socket, Auth, User) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth/*, User*/) {
     $scope.awesomeThings = [];
     $scope.days = [];
     $scope.isAdmin = Auth.isAdmin;
@@ -17,12 +17,12 @@ angular.module('codemagnetAppApp')
       if (!$scope.newThingName || !$scope.newThingUrl || !$scope.newThingInfo) {
         return;
       } else {
-        $http.post('/api/things', { 
+        $http.post('/api/things', {
             name: $scope.newThingName,
             url:  $scope.newThingUrl,
             language: $scope.newThingLanguage,
             info: $scope.newThingInfo,
-            createdAt: Date.now() 
+            createdAt: Date.now()
           });
         $scope.newThingName = '';
         $scope.newThingUrl = '';
