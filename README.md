@@ -1,13 +1,14 @@
 # CodeMagnetApp
 
 ## Info
-- Written in `AngularJS` and `NodeJS`
-- built by `grunt`
+- Written in `ReactJS/AngularJS` and `NodeJS`
+- build by `grunt`
 - test by `mocha/JSHint`
 
 
 ## How to develop
 - `npm i`
+- `bower install`
 - `grunt`
 
 🍣
