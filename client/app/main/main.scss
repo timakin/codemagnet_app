@@ -1,7 +1,6 @@
 .letterSpacing2px { letter-spacing: 2px; }
 #banner h1.letterSpacing2px { letter-spacing: 2px; }
 
-
 .thing-form {
     margin: 20px 0;
 }
@@ -12,6 +11,7 @@
     border-color: rgba(0,0,0,0);    
 }
 .navbar-default .navbar-brand {
+    font-family: Adam;
     color: white;
 }
 .navbar-default .navbar-brand:focus {

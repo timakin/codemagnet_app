@@ -9,7 +9,7 @@ angular.module('codemagnetAppApp')
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       $scope.days = allDays();
-      $scope.langs = ['C', 'C#', 'C++', 'Clojure', 'CSS', 'D', 'Erlang', 'Go', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Objective-C', 'Perl', 'PHP', 'Python', 'R', 'Ruby', 'Scala', 'SQL', 'Swift','Python'];
+      $scope.langs = ['C', 'C#', 'C++', 'Clojure', 'CSS', 'D', 'Erlang', 'F#', 'Go', 'Haskell', 'HTML', 'J', 'Java', 'JavaScript', 'Lisp', 'Objective-C', 'Perl', 'PHP', 'Python', 'R', 'Ruby', 'Scala', 'SQL', 'Swift','Python'];
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
 

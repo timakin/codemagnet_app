@@ -9,11 +9,22 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+@font-face {
+  font-family: 'Adam';
+  src: url('/assets/fonts/adam-cg-pro.otf');
+}
+
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+}
+
+.pageTitle {
+  color: #534540;
+  text-align: center;
 }
 
 body {
@@ -22,11 +33,13 @@ body {
 
 // Component styles are injected through grunt
 // injector
+@import 'about/about.scss';
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 @import 'code-post-modal/code-post-modal.scss';
 @import 'comment/comment.scss';
 @import 'modal/modal.scss';
+@import 'navbar-notransparent/navbar-notransparent.scss';
 @import 'navbar/navbar.scss';
 // endinjector
