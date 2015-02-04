@@ -2,7 +2,9 @@
 
 angular.module('codemagnetAppApp')
   .filter('dailyLoop', function () {
-    return function (thing, day) {
+    return function (thing) {
+      return 'dailyLoop filter: '+thing;
+      /*
       function toDateFormat(date) {
         return date.toDateString();
       }
@@ -12,8 +14,9 @@ angular.module('codemagnetAppApp')
         var created = toDateFormat(rawCreated);
         var date = toDateFormat(day);
         if (created === date) {
-          return true; 
+          return true;
         }
       }
+      */
     };
   });
