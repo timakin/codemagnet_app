@@ -6,7 +6,8 @@ angular.module('codemagnetAppApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'react'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -15,6 +16,11 @@ angular.module('codemagnetAppApp', [
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })
+
+  .directive('Share', function(reactDirective) {
+      return reactDirective(Share);
+  })
+
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
