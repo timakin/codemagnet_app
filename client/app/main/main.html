@@ -12,7 +12,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">    
+  <div class="modal-dialog">
     <form class="thing-form">
     <div class="modal-content">
       <div class="modal-header">
@@ -32,8 +32,8 @@
       </div>
       <div class="modal-footer">
         <span class="input-group-btn">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addThing()">Submit</button>
+          <button type="button" class="btn btn-default btn-raised" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-raised" data-dismiss="modal" ng-click="addThing()">Submit</button>
         </span>
       </div>
     </div>
@@ -49,7 +49,7 @@
       <h3 class="page-header colorBrown">{{day | date: 'yyyy-MM-dd'}}</h3>
       <ul class="codeList" ng-repeat="thing in awesomeThings | orderBy: '-upvotes'">
         <li class="codeListContent" ng-if="thing | dailyLoop:day">
-          <button class="btn btnUpvote" ng-click="incrementUpvotes(thing)">
+          <button class="btn btn-material-indigo btn-raised btnUpvote" ng-click="incrementUpvotes(thing)">
             <a class="upvoteButton"></a>
             <a class="counter">{{thing.upvotes}}</a>
           </button>
@@ -57,17 +57,20 @@
           <div class="codeListDescription">
             <a class="codeTitle" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
             <p class="codeLang">{{thing.language}}</p>
-            <p class="codeInfo">{{thing.info}}</p>
+            <p class="codeInfo" ng-init="thing.isComment=false" ng-click="thing.isComment=!thing.isComment">{{thing.info}}</p>
           </div>
+
+          <react-component name="Comment" props="thing" />
+
         </li>
       </ul>
     </div>
 
 
-
     <div class="col-md-1"></div>
   </div>
 </div>
+
 
 <div>
   <p>{{'text' | dailyLoop }}</p>

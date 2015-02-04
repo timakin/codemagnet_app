@@ -3,6 +3,9 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
+
+@import "bootstrap-material-design/sass/material.scss";
+
 @import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
 
 /**
@@ -38,6 +41,7 @@ body {
 @import 'admin/admin.scss';
 @import 'main/main.scss';
 @import 'code-post-modal/code-post-modal.scss';
+@import 'comment/comment.scss';
 @import 'modal/modal.scss';
 @import 'navbar-notransparent/navbar-notransparent.scss';
 @import 'navbar/navbar.scss';
