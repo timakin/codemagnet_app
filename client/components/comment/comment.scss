@@ -11,6 +11,10 @@
     display: none;
   }
 
+  .description {
+    list-style-type: none;
+  }
+
   textarea{
     margin-top: 8px;
     margin-right: auto;
@@ -31,5 +35,6 @@
     border-radius: 3px;
     color: white;
     display: inline-block;
+    letter-spacing: 1.5px;
   }
 }

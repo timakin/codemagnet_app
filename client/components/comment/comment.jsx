@@ -48,9 +48,9 @@ var Comment = React.createClass({
         if(this.state.comments){
           var commentListView = this.state.comments.map(function(comment){
             return (
-              <li className="description">
-                {comment.description}
-              </li>);
+                <li className="description well">
+                  {comment.description}
+                </li>);
           }.bind(this));
         }
 
@@ -59,12 +59,13 @@ var Comment = React.createClass({
         return (
           <div className={commentStyles}>
             <hr />
-            <p>Comment</p>
+            <h3>Comment</h3>
+            <textarea placeholder="Please enter a comment..." className="form-control" rows="3" type="text" value={this.state.description} onChange={this.handleChange}></textarea>
+            <div className="btn btn-primary btn-raised" onClick={this.sending}>Send</div>
+
             <ul className="commentList">
               {commentListView}
             </ul>
-            <textarea placeholder="Please enter a comment..." className="form-control" rows="3" type="text" value={this.state.description} onChange={this.handleChange}></textarea>
-            <div className="btn btn-send" onClick={this.sending}>Send</div>
           </div>
         );
     }
