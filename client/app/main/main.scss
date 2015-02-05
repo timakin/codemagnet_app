@@ -184,6 +184,14 @@
     border-top: 1px solid #E5E5E5;
 }
 
+.modal-content .modal-footer .btn + .btn {
+    margin-bottom: 0px;
+}
+
+.btn-default:not(.btn-link):not(.btn-flat) {
+    color: #534540;
+}
+
 textarea.codePostFormInput {
     resize:none;
     max-width: 100%;

@@ -3,9 +3,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'font-awesome/scss/font-awesome';
-
 @import "bootstrap-material-design/sass/material.scss";
-
 @import url(http://fonts.googleapis.com/css?family=Montserrat:700,400);
 
 /**
@@ -30,8 +28,16 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   text-align: center;
 }
 
+.well {
+  word-break: break-all;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+.btn:not(.btn-link):not(.btn-flat) {
+  color: white;
 }
 
 // Component styles are injected through grunt
