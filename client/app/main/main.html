@@ -12,7 +12,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">    
+  <div class="modal-dialog">
     <form class="thing-form">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,7 +56,7 @@
           <button type="button" class="close" ng-show="isAdmin()" ng-click="deleteThing(thing)">&times;</button>
           <div class="codeListDescription">
             <a class="codeTitle" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
-            <react-component name="Share"></react-component>
+            <react-component name="Share" props="thing"></react-component>
             <p class="codeLang">{{thing.language}}</p>
             <p class="codeInfo">{{thing.info}}</p>
           </div>
