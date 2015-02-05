@@ -3,8 +3,10 @@
   font-size: 20px;
 }
 
+.navbar-transparent {
+  background: transparent !important;  
+}
 .navbar-default.navbar {
-background: none;
 opacity: 1.0;
 border-color: transparent;
 }
