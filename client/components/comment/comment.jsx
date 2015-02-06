@@ -61,10 +61,10 @@ var Comment = React.createClass({
             <hr />
             <h3>Comment</h3>
             <textarea placeholder="Please enter a comment..." className="form-control" rows="3" type="text" value={this.state.description} onChange={this.handleChange}></textarea>
-            <div className="btn btn-primary btn-raised" onClick={this.sending}>Send</div>
+            <div className="btn btn-info btn-raised" onClick={this.sending}>Send</div>
 
             <ul className="commentList">
-              {commentListView}
+              <p>{commentListView}</p>
             </ul>
           </div>
         );
