@@ -36,7 +36,10 @@ angular.module('codemagnetAppApp')
     };
 
     $scope.incrementUpvotes = function(thing) {
-      $http.put('/api/things/' + thing._id + '/upvote');
+      if(localStorage['things-'+thing._id] !== "true"){
+        $http.put('/api/things/' + thing._id + '/upvote');
+        localStorage.setItem('things-'+thing._id, "true");
+      }
     };
 
     $scope.$on('$destroy', function () {
