@@ -12,9 +12,7 @@ var Share = React.createClass({
 
     render: function() {
 
-      console.log(this.props);
-
-      var linkText = "http://twitter.com/intent/tweet?text=" + this.props.name + " http://codemg.net/ #codemagnet";
+      var linkText = "http://twitter.com/intent/tweet?text=" + encodeURIComponent(this.props.name) + " http://codemg.net/ #codemagnet";
 
         return (
           <div className="share">
