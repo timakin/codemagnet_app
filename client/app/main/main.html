@@ -56,6 +56,7 @@
           <button type="button" class="close" ng-show="isAdmin()" ng-click="deleteThing(thing)">&times;</button>
           <div class="codeListDescription">
             <a class="codeTitle" target="_blank" href="{{thing.url}}">{{thing.name}}</a>
+            <react-component name="Share" props="thing"></react-component>
             <p class="codeLang">{{thing.language}}</p>
             <p class="codeInfo" ng-init="thing.isComment=false" ng-click="thing.isComment=!thing.isComment">{{thing.info}}</p>
           </div>

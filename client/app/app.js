@@ -17,9 +17,12 @@ angular.module('codemagnetAppApp', [
     $httpProvider.interceptors.push('authInterceptor');
   })
 
-    .directive('Comment', function(reactDirective) {
-        return reactDirective(Comment);
-     })
+  .directive('Comment', function(reactDirective) {
+      return reactDirective(Comment);
+  })
+  .directive('Share', function(reactDirective) {
+      return reactDirective(Share);
+  })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
