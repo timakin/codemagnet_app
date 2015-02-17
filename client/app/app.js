@@ -23,6 +23,9 @@ angular.module('codemagnetAppApp', [
   .directive('Share', function(reactDirective) {
       return reactDirective(Share);
   })
+  .directive('Codepost', function(reactDirective) {
+      return reactDirective(Codepost);
+  })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {

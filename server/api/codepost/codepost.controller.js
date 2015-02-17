@@ -14,7 +14,6 @@ exports.index = function(req, res) {
 exports.new = function(req, res) {
   Codepost.find(function (err, codeposts) {
     if(err) { return handleError(res, err); }
-    console.log("yo");
     return res.json(200, codeposts);
   });
 };
