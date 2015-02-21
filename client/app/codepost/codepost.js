@@ -10,7 +10,7 @@ angular.module('codemagnetAppApp')
       })
       .state('new', {
         url: '/codepost/new',
-        templateUrl: 'app/codepost/new/codepostNew.html',
-        controller: 'CodepostNewCtrl'
+        templateUrl: 'app/codepost/new.html',
+        controller: 'CodepostCtrl'
       });
   });

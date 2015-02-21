@@ -11,13 +11,6 @@ exports.index = function(req, res) {
   });
 };
 
-exports.new = function(req, res) {
-  Codepost.find(function (err, codeposts) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, codeposts);
-  });
-};
-
 // Get a single codepost
 exports.show = function(req, res) {
   Codepost.findById(req.params.id, function (err, codepost) {
