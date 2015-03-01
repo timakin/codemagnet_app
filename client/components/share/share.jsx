@@ -1,6 +1,4 @@
-/** @jsx React.DOM */
-
-var Share = React.createClass({
+module.exports = React.createClass({
     handleChange: function(event,data) {
     },
     componentWillMount: function(){

@@ -1,5 +1,10 @@
 'use strict';
 
+
+var Comment = require('../components/comment/comment.jsx');
+var Share = require('../components/share/share.jsx');
+var Codepost = require('../components/codepost/codepost.jsx');
+
 angular.module('codemagnetAppApp', [
   'ngCookies',
   'ngResource',
@@ -9,6 +14,9 @@ angular.module('codemagnetAppApp', [
   'ui.bootstrap',
   'react'
 ])
+  .value('Comment', Comment)
+  .value('Share', Share)
+  .value('Codepost', Codepost)
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');
@@ -16,17 +24,6 @@ angular.module('codemagnetAppApp', [
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })
-
-  .directive('Comment', function(reactDirective) {
-      return reactDirective(Comment);
-  })
-  .directive('Share', function(reactDirective) {
-      return reactDirective(Share);
-  })
-  .directive('Codepost', function(reactDirective) {
-      return reactDirective(Codepost);
-  })
-
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers
