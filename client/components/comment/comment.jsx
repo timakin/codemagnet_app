@@ -1,8 +1,4 @@
-/** @jsx React.DOM */
-
-// var request = require('../bower_components/superagent/superagent.js');
-
-var Comment = React.createClass({
+module.exports = React.createClass({
 
     getInitialState: function() {
       return {description: ''};
